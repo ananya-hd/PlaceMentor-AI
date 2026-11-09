@@ -1,0 +1,686 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlaceMentor AI | Placement Preparation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+    <h2>PlaceMentor AI</h2>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#login">Login</a></li>
+        <li><a href="#jobs">Jobs</a></li>
+    </ul>
+</nav>
+
+
+<!-- HOME -->
+<section id="home" class="hero">
+    <h1>PlaceMentor AI</h1>
+
+    <h2>AI-Powered Placement Preparation & Career Guidance</h2>
+
+    <p>
+        Analyze your resume, discover matching careers,
+        prepare for interviews, practice aptitude and
+        track your placement preparation.
+    </p>
+
+    <a href="#login" class="btn">Get Started</a>
+</section>
+
+
+<!-- FEATURES -->
+<section id="features" class="section">
+    <h2>Our Features</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>AI Resume Analyzer</h3>
+            <p>
+                Discover job matches and identify skills
+                you need to develop.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Personalized Career Roadmap</h3>
+            <p>
+                Generate a learning roadmap based on
+                missing job-related skills.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>AI Interview Practice</h3>
+            <p>
+                Practice technical and HR questions
+                with semantic feedback.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Placement Readiness Analysis</h3>
+            <p>
+                Explore your preparation level using
+                an experimental neural network.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Optional Aptitude Test</h3>
+            <p>
+                Practice quantitative, reasoning,
+                verbal and technical questions.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Coding & Learning Resources</h3>
+            <p>
+                Access coding challenges, DSA practice
+                and technical preparation materials.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- LOGIN -->
+
+<section id="login" class="section login-section">
+    <h2>Student Account</h2>
+
+    <div class="login-box">
+        <div id="loginForm">
+            <h3>Login</h3>
+
+            <input type="email" id="email"
+                   placeholder="Registered email" autocomplete="email">
+
+            <input type="password" id="password"
+                   placeholder="Password" autocomplete="current-password">
+
+            <button type="button" onclick="login()">Login</button>
+
+            <p id="loginMsg" role="status"></p>
+
+            <p>New student?</p>
+            <button type="button" onclick="showRegister()">
+                Create Account
+            </button>
+        </div>
+
+        <div id="registerForm" class="hidden" hidden>
+            <h3>Create Student Account</h3>
+
+            <input type="text" id="registerName"
+                   placeholder="Full name" autocomplete="name">
+
+            <input type="email" id="registerEmail"
+                   placeholder="Email address" autocomplete="email">
+
+            <input type="password" id="registerPassword"
+                   placeholder="Password (minimum 8 characters)"
+                   autocomplete="new-password">
+
+            <input type="password" id="confirmPassword"
+                   placeholder="Confirm password"
+                   autocomplete="new-password">
+
+            <button type="button" onclick="registerStudent()">
+                Register
+            </button>
+
+            <p id="registerMsg" role="status"></p>
+
+            <button type="button" onclick="showLogin()">
+                Back to Login
+            </button>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- STUDENT PORTAL -->
+<section id="studentPortal" class="hidden">
+    
+<div class="section">
+    <h3 id="studentWelcome">Welcome!</h3>
+    <button type="button" class="main-btn" onclick="logout()">
+        Logout
+    </button>
+</div>
+
+
+
+    <!-- DASHBOARD -->
+    <section class="section dashboard">
+
+        <h2>Student Progress Dashboard</h2>
+
+        <p class="subtitle">
+            View your aptitude performance and
+            access AI-powered preparation tools.
+        </p>
+
+        <div class="progress-grid">
+
+            <div class="progress-card">
+                <h3 id="scoreDisplay">Not Taken</h3>
+                <p>Aptitude Score</p>
+            </div>
+
+            <div class="progress-card">
+                <h3 id="percentageDisplay">--</h3>
+                <p>Aptitude Percentage</p>
+            </div>
+
+            <div class="progress-card">
+                <h3 id="levelDisplay">Not Started</h3>
+                <p>Aptitude Performance</p>
+            </div>
+
+            <div class="progress-card">
+                <h3 id="weakAreaDisplay">--</h3>
+                <p>Weak Area</p>
+            </div>
+
+        </div>
+
+        <div class="suggestion-box">
+            <h3>Smart Suggestion</h3>
+
+            <p id="suggestionText">
+                Take the optional aptitude test to
+                receive personalized practice suggestions.
+            </p>
+        </div>
+
+        <div class="dashboard-actions">
+
+            <button
+                type="button"
+                class="main-btn"
+                onclick="openAptitude()"
+            >
+                Take Aptitude Test (Optional)
+            </button>
+
+            <button
+                type="button"
+                class="main-btn"
+                onclick="document.getElementById('ai-resume').scrollIntoView({behavior:'smooth'})"
+            >
+                Analyze My Resume
+            </button>
+
+            <button
+                type="button"
+                class="main-btn"
+                onclick="document.getElementById('ai-interview').scrollIntoView({behavior:'smooth'})"
+            >
+                Practice Interview
+            </button>
+
+            <button
+                type="button"
+                class="main-btn"
+                onclick="document.getElementById('placement-readiness').scrollIntoView({behavior:'smooth'})"
+            >
+                View Placement Readiness
+            </button>
+
+        </div>
+    </section>
+
+
+    <!-- OPTIONAL APTITUDE -->
+    <section id="aptitude" class="section" hidden>
+
+        <h2>Optional Aptitude Test</h2>
+
+        <p class="subtitle">
+            20 questions covering Quantitative,
+            Reasoning, Verbal and Technical skills.
+        </p>
+
+        <div id="quizBox"></div>
+
+        <button
+            type="button"
+            class="main-btn"
+            onclick="submitTest()"
+        >
+            Submit Test
+        </button>
+
+    </section>
+
+
+    <!-- AI RESUME ANALYZER -->
+    <section id="ai-resume" class="section ai-resume-section">
+
+        <h2>AI Resume Analyzer</h2>
+
+        <p class="subtitle">
+            Upload your resume to discover matching
+            career opportunities using Deep Learning.
+        </p>
+
+        <div class="resume-upload-box">
+
+            <h3>Upload Your Resume</h3>
+
+            <p>Supported format: PDF (Maximum 5 MB)</p>
+
+            <input
+                type="file"
+                id="resumeFile"
+                accept=".pdf,application/pdf"
+            >
+
+            <button
+                type="button"
+                class="main-btn"
+                onclick="analyzeResume()"
+            >
+                Analyze My Resume
+            </button>
+
+            <p id="resumeStatus" role="status"></p>
+
+        </div>
+
+        <div id="resumeResults" class="resume-results hidden">
+
+            <h3>AI Job Matching Results</h3>
+
+            <p class="subtitle">
+                Semantic similarity measures resume-job
+                text similarity, not hiring probability.
+            </p>
+
+            <div id="jobMatches"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- AI INTERVIEW PRACTICE -->
+    
+<!-- AI INTERVIEW PRACTICE -->
+<section id="ai-interview" class="section">
+
+    <h2>AI Interview Practice</h2>
+
+    <p class="subtitle">
+        Select a subject, practice numbered interview
+        questions and receive AI-powered feedback.
+    </p>
+
+    <div class="interview-panel">
+
+        <!-- SUBJECT SELECTION -->
+        <label for="interviewCategory">
+            Select Subject
+        </label>
+
+        <select id="interviewCategory">
+            <option value="">Loading subjects...</option>
+        </select>
+
+        <p id="interviewQuestionCount"></p>
+
+        <!-- QUESTION SELECTION -->
+        <label for="interviewQuestion">
+            Select Interview Question
+        </label>
+
+        <select id="interviewQuestion">
+            <option value="">Loading questions...</option>
+        </select>
+
+        <!-- QUESTION NAVIGATION -->
+        <div class="interview-navigation">
+
+            <button
+                type="button"
+                class="main-btn"
+                id="previousInterviewQuestion"
+                onclick="previousInterviewQuestion()"
+            >
+                Previous Question
+            </button>
+
+            <button
+                type="button"
+                class="main-btn"
+                id="nextInterviewQuestion"
+                onclick="nextInterviewQuestion()"
+            >
+                Next Question
+            </button>
+
+        </div>
+
+        <p id="interviewQuestionPosition"></p>
+
+        <!-- ANSWER INPUT -->
+        <label for="interviewAnswer">
+            Your Answer
+        </label>
+
+        <textarea
+            id="interviewAnswer"
+            rows="6"
+            placeholder="Type your interview answer here..."
+        ></textarea>
+
+        <!-- AI EVALUATION -->
+        <button
+            type="button"
+            class="main-btn"
+            onclick="submitInterviewAnswer()"
+        >
+            Evaluate My Answer
+        </button>
+
+        <p id="interviewStatus" role="status"></p>
+
+        <div id="interviewFeedback"></div>
+
+    </div>
+
+</section>
+
+
+
+    <!-- PLACEMENT READINESS -->
+    <section id="placement-readiness" class="section">
+
+        <h2>AI Placement Readiness Analysis</h2>
+
+        <p class="subtitle">
+            Understand your current preparation using
+            an experimental MLP neural network.
+        </p>
+
+        <div class="readiness-panel">
+
+            <h3>Your Preparation Assessment</h3>
+
+            <p>
+                This analysis uses your resume-job
+                similarity score, interview semantic
+                similarity and optional aptitude score.
+            </p>
+
+            <div class="progress-grid">
+
+                <div class="progress-card">
+                    <h3 id="readinessResumeScore">--</h3>
+                    <p>Resume Similarity</p>
+                </div>
+
+                <div class="progress-card">
+                    <h3 id="readinessInterviewScore">--</h3>
+                    <p>Interview Similarity</p>
+                </div>
+
+                <div class="progress-card">
+                    <h3 id="readinessAptitudeScore">Not Taken</h3>
+                    <p>Optional Aptitude</p>
+                </div>
+
+            </div>
+
+            <button
+                type="button"
+                class="main-btn"
+                onclick="calculateReadiness()"
+            >
+                Analyze My Placement Readiness
+            </button>
+
+            <p id="readinessStatus" role="status"></p>
+
+            <div id="readinessResults" class="hidden">
+
+                <h3>Your Experimental Readiness Score</h3>
+
+                <h2 id="readinessScore">--</h2>
+
+                <p id="readinessLevel"></p>
+
+                <h3>Personalized Improvement Suggestions</h3>
+
+                <ul id="readinessSuggestions"></ul>
+
+                <p id="readinessDisclaimer">
+                    This is an experimental preparation
+                    estimate based on simulated data.
+                    It does not predict actual placement success.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CODING CHALLENGES -->
+    <section class="section resources">
+
+        <h2>Coding Challenges</h2>
+
+        <div class="resource-grid">
+
+            <div class="resource-card">
+                <h3>Beginner Coding</h3>
+                <p>Practice arrays, strings, loops and functions.</p>
+
+                <a
+                    href="https://www.google.com/search?q=beginner+coding+problems+with+solutions"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Open Link
+                </a>
+            </div>
+
+            <div class="resource-card">
+                <h3>DSA Practice</h3>
+                <p>Practice stacks, queues, trees and graphs.</p>
+
+                <a
+                    href="https://www.google.com/search?q=DSA+practice+problems+for+placements"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Open Link
+                </a>
+            </div>
+
+            <div class="resource-card">
+                <h3>Programming Notes</h3>
+                <p>Java, Python, C, SQL and web development.</p>
+
+                <a
+                    href="https://www.google.com/search?q=programming+notes+for+placement+preparation"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Open Link
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- INTERVIEW RESOURCES -->
+    <section class="section">
+
+        <h2>Interview Preparation Resources</h2>
+
+        <div class="resource-grid">
+
+            <div class="resource-card">
+                <h3>HR Questions</h3>
+                <p>Self-introduction, strengths and career goals.</p>
+
+                <a
+                    href="https://www.google.com/search?q=HR+interview+questions+for+freshers"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Open Link
+                </a>
+            </div>
+
+            <div class="resource-card">
+                <h3>Technical Questions</h3>
+                <p>OOP, DBMS, OS, CN, SQL and Java.</p>
+
+                <a
+                    href="https://www.google.com/search?q=technical+interview+questions+for+freshers"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Open Link
+                </a>
+            </div>
+
+            <div class="resource-card">
+                <h3>Resume Tips</h3>
+                <p>Improve your resume with projects and skills.</p>
+
+                <a
+                    href="https://www.google.com/search?q=resume+building+tips+for+freshers"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Open Link
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ADMIN PANEL -->
+    <section class="section admin">
+
+        <h2>Admin Panel Preview</h2>
+
+        <p class="subtitle">
+            Frontend demonstration of resource management.
+        </p>
+
+        <div class="admin-box">
+
+            <input
+                type="text"
+                id="adminInput"
+                placeholder="Enter resource or question title"
+            >
+
+            <button type="button" onclick="addAdminItem()">
+                Add Item
+            </button>
+
+            <ul id="adminList">
+                <li>Aptitude questions added</li>
+                <li>Coding resources added</li>
+                <li>Interview preparation links added</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+</section>
+
+
+<!-- JOB OPPORTUNITIES -->
+<section id="jobs" class="section">
+
+    <h2>Job Opportunities</h2>
+
+    <p class="subtitle">
+        Explore fresher-friendly career opportunities.
+    </p>
+
+    <div class="job-grid">
+
+        <div class="job-card">
+            <h3>TCS</h3>
+            <p><b>Role:</b> Graduate Trainee</p>
+            <p><b>Skills:</b> Aptitude, Java, SQL</p>
+            <a href="https://www.google.com/search?q=TCS+freshers+hiring+2026" target="_blank" rel="noopener noreferrer">
+                Search Jobs
+            </a>
+        </div>
+
+        <div class="job-card">
+            <h3>Infosys</h3>
+            <p><b>Role:</b> System Engineer</p>
+            <p><b>Skills:</b> OOP, DBMS, Problem Solving</p>
+            <a href="https://www.google.com/search?q=Infosys+freshers+hiring+2026" target="_blank" rel="noopener noreferrer">
+                Search Jobs
+            </a>
+        </div>
+
+        <div class="job-card">
+            <h3>Accenture</h3>
+            <p><b>Role:</b> Associate Software Engineer</p>
+            <p><b>Skills:</b> Coding, Communication, Aptitude</p>
+            <a href="https://www.google.com/search?q=Accenture+freshers+hiring+2026" target="_blank" rel="noopener noreferrer">
+                Search Jobs
+            </a>
+        </div>
+
+        <div class="job-card">
+            <h3>Wipro</h3>
+            <p><b>Role:</b> Project Engineer</p>
+            <p><b>Skills:</b> Java, SQL, Logical Reasoning</p>
+            <a href="https://www.google.com/search?q=Wipro+freshers+hiring+2026" target="_blank" rel="noopener noreferrer">
+                Search Jobs
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 PlaceMentor AI | Placement Preparation Portal</p>
+</footer>
+
+
+<script src="script.js"></script>
+<script src="auth.js"></script>
+<script src="interview_nav.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,6 @@
+﻿role,description,skills
+Python Developer,"Develop Python applications using Flask REST APIs SQL Git and Docker","Python;Flask;REST APIs;SQL;Git;Docker"
+Data Analyst,"Analyze datasets using Python SQL Excel Power BI and data visualization","Python;SQL;Excel;Power BI;Data Visualization"
+Machine Learning Engineer,"Build machine learning systems using Python scikit-learn TensorFlow and PyTorch","Python;Machine Learning;scikit-learn;TensorFlow;PyTorch"
+Frontend Developer,"Develop responsive web applications using HTML CSS JavaScript and React","HTML;CSS;JavaScript;React"
+Java Developer,"Develop backend applications using Java Spring Boot SQL and REST APIs","Java;Spring Boot;SQL;REST APIs"

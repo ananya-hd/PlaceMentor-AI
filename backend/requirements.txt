@@ -1,0 +1,9 @@
+Flask
+flask-cors
+gunicorn
+PyMuPDF
+sentence-transformers
+torch
+scikit-learn
+numpy
+joblib

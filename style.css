@@ -1,0 +1,399 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f7fb;
+    color: #222;
+}
+
+.navbar {
+    background: #1e3a8a;
+    color: white;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero {
+    min-height: 85vh;
+    background: linear-gradient(rgba(30,58,138,.85), rgba(30,58,138,.85)),
+    url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 180px 10%;
+}
+
+.hero h1 {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.btn, .main-btn {
+    background: #facc15;
+    color: #1e3a8a;
+    padding: 13px 25px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.section {
+    padding: 60px 8%;
+    text-align: center;
+}
+
+.section h2 {
+    color: #1e3a8a;
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.cards, .progress-grid, .job-grid, .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.cards {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card, .progress-card, .job-card, .resource-card, .suggestion-box, .login-box, .quiz-question, .admin-box {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.12);
+}
+
+.card h3, .progress-card h3, .job-card h3, .resource-card h3, .suggestion-box h3 {
+    color: #1e3a8a;
+    margin-bottom: 10px;
+}
+
+.card:hover, .job-card:hover, .resource-card:hover {
+    transform: translateY(-6px);
+    transition: 0.3s;
+}
+
+.login-section {
+    background: #f8fafc;
+}
+
+.login-box {
+    max-width: 420px;
+    margin: auto;
+}
+
+.login-box input, .admin-box input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.login-box button, .admin-box button {
+    width: 100%;
+    padding: 14px;
+    background: #1e3a8a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#loginMsg {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.demo {
+    margin-top: 15px;
+    color: #555;
+}
+
+.dashboard {
+    background: #e0ecff;
+}
+
+.progress-card h3 {
+    font-size: 28px;
+}
+
+.suggestion-box {
+    max-width: 850px;
+    margin: 35px auto 0;
+}
+
+.quiz-question {
+    max-width: 850px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+.quiz-question h3 {
+    color: #1e3a8a;
+    margin-bottom: 15px;
+}
+
+.quiz-question label {
+    display: block;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.job-card, .resource-card {
+    text-align: left;
+}
+
+.job-card p, .resource-card p {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+.job-card a, .resource-card a {
+    display: inline-block;
+    margin-top: 12px;
+    background: #1e3a8a;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.admin {
+    background: #eef4ff;
+}
+
+.admin-box {
+    max-width: 600px;
+    margin: auto;
+    text-align: left;
+}
+
+.admin-box ul {
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+.admin-box li {
+    margin: 10px 0;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    background: #1e3a8a;
+    color: white;
+    text-align: center;
+    padding: 18px;
+}
+
+@media(max-width: 900px) {
+    .cards, .progress-grid, .job-grid, .resource-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+}
+
+/* AI Resume Analyzer */
+
+.ai-resume-section {
+    background: #eef4ff;
+}
+
+.resume-upload-box {
+    background: white;
+    max-width: 650px;
+    margin: 30px auto;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.resume-upload-box h3 {
+    color: #1e3a8a;
+    margin-bottom: 12px;
+}
+
+.resume-upload-box p {
+    margin-bottom: 20px;
+}
+
+.resume-upload-box input {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+}
+
+#resumeStatus {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.resume-results {
+    max-width: 900px;
+    margin: 35px auto;
+}
+
+.resume-results h3 {
+    color: #1e3a8a;
+    margin-bottom: 20px;
+}
+
+.ai-match-card {
+    background: white;
+    text-align: left;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.ai-match-card h3 {
+    margin-bottom: 10px;
+}
+
+.match-progress {
+    height: 12px;
+    background: #e5e7eb;
+    border-radius: 20px;
+    margin: 12px 0;
+    overflow: hidden;
+}
+
+.match-progress-fill {
+    height: 100%;
+    background: #2563eb;
+    border-radius: 20px;
+}
+
+.ai-match-card p {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.ai-match-card .matched {
+    color: #15803d;
+}
+
+.ai-match-card .missing {
+    color: #b45309;
+}
+
+/* Personalized Career Roadmap */
+
+.career-roadmap {
+    background: #f0f7ff;
+    border-left: 4px solid #2563eb;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.career-roadmap[hidden] {
+    display: none;
+}
+
+.career-roadmap h4 {
+    color: #1e3a8a;
+    margin-bottom: 15px;
+}
+
+.career-roadmap ol {
+    padding-left: 22px;
+}
+
+.career-roadmap li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.ai-match-card .main-btn {
+    margin-top: 15px;
+}
+
+/* AI Interview Practice */
+
+.interview-panel {
+    max-width: 750px;
+    margin: 25px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.interview-panel label {
+    display: block;
+    text-align: left;
+    margin: 15px 0 8px;
+    font-weight: bold;
+}
+
+.interview-panel select,
+.interview-panel textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.interview-panel button {
+    margin-top: 18px;
+}
+
+#interviewFeedback {
+    text-align: left;
+    margin-top: 20px;
+    line-height: 1.8;
+}

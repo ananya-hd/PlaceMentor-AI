@@ -1,0 +1,13 @@
+.venv/
+**/.venv/
+__pycache__/
+**/__pycache__/
+.vscode/
+.env
+.env.*
+*.db
+*.sqlite
+*.sqlite3
+uploads/
+*.pdf
+app_backup.txt
